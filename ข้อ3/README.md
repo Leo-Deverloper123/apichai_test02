@@ -16,6 +16,36 @@ A NestJS application that provides REST APIs for managing multilingual products 
 - PostgreSQL (v12 or later)
 - npm or yarn
 
+## ข้อกำหนดระบบ
+
+### Database
+- PostgreSQL เวอร์ชัน 17
+- ไม่ต้องใช้รหัสผ่านในการเชื่อมต่อ (trust authentication)
+
+### การตั้งค่าฐานข้อมูล
+1. ติดตั้ง PostgreSQL 17
+2. สร้างฐานข้อมูลชื่อ `product_db`
+3. ตั้งค่าการเชื่อมต่อใน `typeorm.config.js`:
+   ```javascript
+   {
+     type: 'postgres',
+     host: 'localhost',
+     port: 5432,
+     username: 'postgres',
+     database: 'product_db'
+   }
+   ```
+
+### การรันโปรแกรม
+1. ติดตั้ง dependencies:
+   ```bash
+   npm install
+   ```
+2. รันโปรแกรม:
+   ```bash
+   npm run start
+   ```
+
 ## Installation
 
 1. Install dependencies:
@@ -84,3 +114,8 @@ npm run test
 # test coverage
 npm run test:cov
 ```
+
+## หมายเหตุ
+- ต้องมี PostgreSQL 17 ติดตั้งในเครื่อง
+- ต้องสร้างฐานข้อมูล product_db ก่อนรันโปรแกรม
+- การเชื่อมต่อฐานข้อมูลใช้ trust authentication (ไม่ต้องใช้รหัสผ่าน)

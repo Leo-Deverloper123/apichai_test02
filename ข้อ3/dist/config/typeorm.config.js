@@ -8,7 +8,6 @@ exports.typeOrmConfig = {
     host: 'localhost',
     port: 5432,
     username: 'postgres',
-    password: 'postgres',
     database: 'product_db',
     entities: [product_entity_1.Product, product_translation_entity_1.ProductTranslation],
     synchronize: true,
